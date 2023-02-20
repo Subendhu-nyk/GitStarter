@@ -79,12 +79,8 @@ function addItem(e){
 
   editBtn.appendChild(document.createTextNode('Edit'));
 
-  li.appendChild(editBtn);
-
-  
+  li.appendChild(editBtn);  
 }
-
-
 function removeItem(e){
   if(e.target.classList.contains('delete')){
     if(confirm('Are You Sure?')){
@@ -93,7 +89,6 @@ function removeItem(e){
     }
   }
 }
-
 
 function filterItems(e){
   
