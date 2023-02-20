@@ -131,7 +131,7 @@ function addItem(e){
   li.className = 'list-group-item';
   // Add text node with input value
   li.appendChild(document.createTextNode(newItem));
-  li.appendChild(document.createTextNode(newDesc))
+  li.appendChild(document.createTextNode(" "+ newDesc))
   // Create del button element
   var deleteBtn = document.createElement('button');
 
@@ -174,10 +174,11 @@ function filterItems(e){
   var text = e.target.value.toLowerCase();
   // Get lis
   var items = itemList.getElementsByTagName('li');
-  // Convert to an array
+  // Convert to an array  
   Array.from(items).forEach(function(item){
     var itemName = item.firstChild.textContent;
-    if(itemName.toLowerCase().indexOf(text) != -1){
+    const desc=item.childNodes[1].textContent;
+    if(itemName.toLowerCase().indexOf(text) != -1 || desc.toLowerCase().indexOf(text) != -1  ){
       item.style.display = 'block';
     } else {
       item.style.display = 'none';
