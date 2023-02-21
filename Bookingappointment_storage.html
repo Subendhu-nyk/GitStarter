@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Form
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+          
+                        body{
+                                background-color:bisque ;
+                                
+                            }
+          
+            .col2{                         
+               
+                
+                padding: 0px 30px;
+                background: white;
+                border-radius: 15px;
+            }
+            .row1 {
+                text-align: center;
+                padding: 12px 0px;
+                
+                margin-bottom: 10px;
+
+            }
+            .row2 {
+                
+                margin: 10px 0px;
+                
+
+            }
+            h1 {
+                font-size: 30px;
+                color: orange;
+                font-weight: bold;
+            }
+            p {
+                font-size: 16px;
+            }
+            .forminner{
+                width: 90%;
+                
+            }
+            .forminner2{
+                width: 100%;
+                height: 35px;
+                background-color: orange;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                border-radius: 5px;
+                margin-bottom: 5px;
+
+            }
+            .time{
+                width: 45%;
+                text-align: center;
+                height: 25px;
+                
+            }
+            
+          
+
+            
+        </style>
+    </head>
+    <body>
+
+        <div class="container-fluid">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-6 col-12 ">
+                        <div class="col2 border border-danger">
+                            <div class="row row1">
+                                <div class="col  border-bottom">
+                                    <h1>Book a call</h1> 
+                                <p>Book a call and our representative will call you within 1hr of selected time</p>
+                                </div>                                
+                            </div>
+                        <div class="row2">
+                            <form action="#" onsubmit="onsignup(event)">
+                                <label for="name" class="form-label">Name:</label>
+                                <input type="text" id="name" name="name" placeholder="Your Name" class="form-control"><br><br>
+                                <label for="email" class="form-label">Email Address:</label>
+                                <input type="email" id="email" name="email" placeholder="Your email" class="form-control"><br><br>
+                                <label for="phone" class="form-label">Contact number:</label>
+                                <input type="text" id="phone" name="phone" placeholder="Your contact number" class="form-control "><br><br>
+                                <label for="date" class="form-label">Time for call:</label><br>
+                                <input type="date" class="time" id="date" name="date" placeholder="DD-MM-YYYY">                
+                                <input type="time" class="time" id="time" name="time" ><br><br>   
+                                <button class="btn forminner2 mb-3" >Get a Call</button>                              
+                                
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3"></div>
+                </div>
+            </div>
+        </div>       
+
+
+
+        <script>
+            function onsignup(event){
+                event.preventDefault()
+                let name=event.target.name.value;
+                let email=event.target.email.value;
+                let phone=event.target.phone.value;
+                let date=event.target.date.value;
+                let time=event.target.time.value;
+                localStorage.setItem("name",name)
+                localStorage.setItem("email",email)
+                localStorage.setItem("phone",phone)
+                localStorage.setItem("date",date)
+                localStorage.setItem("time",time)
+            }         
+
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    </body>
+</html>
