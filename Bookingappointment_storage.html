@@ -141,10 +141,28 @@
                 showUserOnScreen(obj)
             }     
             // Task 12 showing user data on screen
+            // function showUserOnScreen(obj){
+            //   const parentElem=document.getElementById('listofitems')             
+            
+            //     parentElem.innerHTML=parentElem.innerHTML+ `<li>Name->${obj.name},Email->${obj.email},Phone no->${obj.phone},Date->${obj.date},Time->${obj.time}</li>`
+            // }
+
+            // Task 13 Adding deleting button on the screen to delete user data from the screen 
             function showUserOnScreen(obj){
               const parentElem=document.getElementById('listofitems')             
+                const childElem = document.createElement('li')
+
+                childElem.textContent = `Name->${obj.name},Email->${obj.email},Phone no->${obj.phone},Date->${obj.date},Time->${obj.time}`                
+                const deleteButton =document.createElement('input')
+            deleteButton.type = 'button'
+            deleteButton.value = 'Delete'
+            deleteButton.onclick = () => {
+                localStorage.removeItem(obj.email)
+                parentElem.removeChild(childElem)
+            }
+            childElem.appendChild(deleteButton)
+            parentElem.appendChild(childElem)                  
             
-                parentElem.innerHTML=parentElem.innerHTML+ `<li>Name->${obj.name},Email->${obj.email},Phone no->${obj.phone},Date->${obj.date},Time->${obj.time}</li>`
             }
 
 
