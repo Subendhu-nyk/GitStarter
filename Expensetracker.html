@@ -83,7 +83,7 @@
     deleteButton.value = 'Delete';
     childElem.appendChild(deleteButton)
     deleteButton.onclick = () => {
-        localStorage.removeItem(obj.Amount);
+        localStorage.removeItem(obj.description);
         parentElem.removeChild(childElem);
     }
     const editButton =document.createElement('input')
@@ -91,7 +91,7 @@
     editButton.value = 'Edit'
     childElem.appendChild(editButton)     
     editButton.onclick = () => {
-        localStorage.removeItem(obj.Amount)
+        localStorage.removeItem(obj.description)
                 parentElem.removeChild(childElem)
                 document.getElementById('amt').value=obj.Amount
                 document.getElementById('desc').value=obj.Description
